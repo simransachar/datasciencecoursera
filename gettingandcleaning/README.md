@@ -9,6 +9,7 @@ Steps :-
 
 run_analysis.R Code explanation as per question bullets 1-5 :
 
+#Ordered List
 1. Merges the training and the test sets to create one data set.
 snippet : 
 features1 <- read.table("./UCI HAR Dataset/features.txt")
