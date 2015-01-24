@@ -10,7 +10,7 @@ Steps :-
 run_analysis.R Code explanation as per question bullets 1-5 :
 
 
-1. Merges the training and the test sets to create one data set.
+* Merges the training and the test sets to create one data set.
 snippet : 
 ```sh
 features1 <- read.table("./UCI HAR Dataset/features.txt")
@@ -24,7 +24,7 @@ explanation:
 66 features having only mean() and std() features are extracted from 561 features.  
 Also merged the train and test datasets
 
-2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+* Extracts only the measurements on the mean and standard deviation for each measurement. 
 snippet:
 ```sh
 indices <- features$V1
@@ -34,7 +34,7 @@ explanation:
 get the index list for all 66 features.  
 'filter_set' gets the values of only these 66 features(mean and std) from the data of 561 features 
 
-3. Uses descriptive activity names to name the activities in the data set
+* Uses descriptive activity names to name the activities in the data set
 snippet:
 ```sh
 activity_test <- read.table("./UCI HAR Dataset/test/Y_test.txt")
@@ -54,7 +54,7 @@ explanation:
 got all the activity code for test and train, merged it.  
 Then changed the corresponding activity code to activity name
 
-4. Appropriately labels the data set with descriptive variable names.  
+* Appropriately labels the data set with descriptive variable names.  
 snippet:
 ```sh
 c_names <- features$V2
@@ -66,9 +66,9 @@ explanation:
 used gsub to make the variable names more clear , thus eliminated extra symbols like '-','(',')'.   
 For eg : changed tBodyAcc-mean()-X to tBodyAccmeanX 
 
-5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+* From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-    snippet:
+snippet:
 ```sh
 subsect_train <- read.table("./UCI HAR Dataset/train/subject_train.txt")
 subsect_test <- read.table("./UCI HAR Dataset/test/subject_test.txt")
