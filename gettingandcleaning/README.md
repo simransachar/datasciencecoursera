@@ -78,6 +78,11 @@ final_set <- cbind(final_set,subjects)
 library(reshape2)
 datamelt <- melt(final_set,id = c("activity","subject"), measure.vars = c_names)
 tidydata <- dcast(datamelt, activity + subject ~ variable, mean)
+tidynames <- names(tidydata)
+new_tidynames <- paste("AVG",tidynames,sep='')
+new_tidynames[1] <- "activity"
+new_tidynames[2] <- "subject"
+colnames(tidydata) <- new_tidynames
 write.table(tidydata,file="tidydata.txt",row.name=FALSE)
 ```
 explanation:    
@@ -88,6 +93,7 @@ So in order to get average for each activity and corresponding subject, there wi
 'activity + subject ~ variable' formula in dcast function does this job.
 in the melt function - 'measure.vars = c_names' , c_names are the colnames we get from step 4.     
 c_names are the 66 features which is our variable names for final_set dataframe, other than activity and subject variables   
-so in the dcast function we take mean of values of all these 66 variables for each activity and subject     
+so in the dcast function we take mean of values of all these 66 variables for each activity and subject.        
+Also changed the column names - just appended 'AVG' in front of every column except 'activity' and 'subject'             
 final step is writing the output using write.table
 
