@@ -5,7 +5,7 @@ Steps :-
 * load the files and folder from this github repository into your working directory
 * the folder is : UCI HAR dataset and files are : run_analysis.R , tidydata.txt , CodeBook.md, README.md
 * install 'reshape2' package (if not yet done)
-* run the script - run_analysis.R (a tidy  data set - tidatdata.txt will be created/updated)
+* run the script - run_analysis.R (a tidy  data set - tidydata.txt will be created/updated)
 
 run_analysis.R Code explanation as per question bullets 1-5 :
 
